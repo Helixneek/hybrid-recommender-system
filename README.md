@@ -7,7 +7,7 @@ The primary engineering goal of this project was to architect a system capable o
 
 <a href="[Colab](https://colab.research.google.com/drive/1z5QmOepAAq3pa61FP4Bl4mJtmCc6x8SX?usp=sharing)" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-![Demo of the recommender](demo.jpg)
+![Demo of the recommender](./demo/demo1.jpg)
 
 ## 🏗️ System Architecture
 
@@ -40,4 +40,5 @@ When a user has sufficient interaction history, the system weights the Collabora
 1. Migrate the static SVD model to a Neural Collaborative Filtering (NCF) architecture using PyTorch.
 
 2. Implement a vector database (e.g., FAISS) to speed up the Cosine Similarity search from O(N) to O(logN) for production-scale item catalogs.
+
 
