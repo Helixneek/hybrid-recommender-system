@@ -9,16 +9,15 @@ The primary engineering goal of this project was to architect a system capable o
 
 ![Demo of the recommender](./demo/demo1.jpg)
 
-## 🏗️ System Architecture
+## System Architecture
 
 The engine balances two systems:
 1. **Content-Based Filtering (NLP):** Utilizes **TF-IDF (Term Frequency-Inverse Document Frequency)** vectorization combined with Cosine Similarity to recommend items based on metadata and text descriptions. This ensures new, unrated items still reach the correct audience.
 2. **Collaborative Filtering (Matrix Factorization):** Leverages **Singular Value Decomposition (SVD)** to uncover latent user preferences and hidden item relationships based on historical interaction matrices.
 
-### The Hybrid Logic:
 When a user has sufficient interaction history, the system weights the Collaborative (SVD) model heavily. For brand-new users (Cold Start), the system falls back entirely on the Content-Based (TF-IDF) model to provide immediate, relevant suggestions based on initial selections.
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 1. **Clone the repository**
    ```bash
@@ -35,10 +34,11 @@ When a user has sufficient interaction history, the system weights the Collabora
     ```bash
     jupyter notebook notebooks/recommender_pipeline.ipynb
 
-## 📈 Future Optimizations
+## Future Optimizations
 
 1. Migrate the static SVD model to a Neural Collaborative Filtering (NCF) architecture using PyTorch.
 
 2. Implement a vector database (e.g., FAISS) to speed up the Cosine Similarity search from O(N) to O(logN) for production-scale item catalogs.
+
 
 
