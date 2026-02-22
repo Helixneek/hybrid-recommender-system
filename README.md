@@ -5,9 +5,13 @@ This recommender system designed to provide highly accurate user recommendations
 
 The primary engineering goal of this project was to architect a system capable of bypassing the "Cold Start" problem, which is a common critical failure point in pure collaborative filtering systems where new users or unrated items cannot be processed.
 
+<a href="[Colab](https://colab.research.google.com/drive/1z5QmOepAAq3pa61FP4Bl4mJtmCc6x8SX?usp=sharing)" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+![Demo of the recommender](demo.jpg)
+
 ## 🏗️ System Architecture
 
-The engine dynamically balances two sub-systems:
+The engine balances two systems:
 1. **Content-Based Filtering (NLP):** Utilizes **TF-IDF (Term Frequency-Inverse Document Frequency)** vectorization combined with Cosine Similarity to recommend items based on metadata and text descriptions. This ensures new, unrated items still reach the correct audience.
 2. **Collaborative Filtering (Matrix Factorization):** Leverages **Singular Value Decomposition (SVD)** to uncover latent user preferences and hidden item relationships based on historical interaction matrices.
 
@@ -36,3 +40,4 @@ When a user has sufficient interaction history, the system weights the Collabora
 1. Migrate the static SVD model to a Neural Collaborative Filtering (NCF) architecture using PyTorch.
 
 2. Implement a vector database (e.g., FAISS) to speed up the Cosine Similarity search from O(N) to O(logN) for production-scale item catalogs.
+
